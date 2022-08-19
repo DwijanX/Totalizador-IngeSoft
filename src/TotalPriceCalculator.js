@@ -1,5 +1,5 @@
-function getTotalPrice(Qty,Price)
+function getSubTotalPrice(Qty,Price)
 {
     return Qty*Price
 }
-export default getTotalPrice
+export default getSubTotalPrice
