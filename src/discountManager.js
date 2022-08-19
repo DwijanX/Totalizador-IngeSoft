@@ -1,4 +1,4 @@
-const Discounts={1000:0.03}
+const Discounts={1000:0.03,3000:0.05,7000:0.07,10000:0.1,30000:0.15}
 
 function getDiscount(price)
 {
@@ -9,6 +9,7 @@ function getDiscount(price)
         if(DiscountRanges[i]<=price)
         {
             discountApplied=price*Discounts[DiscountRanges[i]]
+            break
         }
     }
     return discountApplied
