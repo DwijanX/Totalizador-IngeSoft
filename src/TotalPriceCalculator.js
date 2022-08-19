@@ -2,4 +2,8 @@ function getSubTotalPrice(Qty,Price)
 {
     return Qty*Price
 }
-export default getSubTotalPrice
+function getTotalPrice(SubTotal,TaxAmount)
+{
+    return SubTotal+TaxAmount
+}
+export { getSubTotalPrice,getTotalPrice}

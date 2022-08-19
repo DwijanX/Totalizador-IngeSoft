@@ -1,4 +1,4 @@
-import getSubTotalPrice from "./TotalPriceCalculator";
+import { getSubTotalPrice,getTotalPrice} from "./TotalPriceCalculator";
 import getTax from "./taxCalculator";
 const Qty = document.querySelector("#QtyProduct");
 const Price = document.querySelector("#ProductsPrice");
@@ -9,11 +9,14 @@ form.addEventListener("submit",(event)=>
     let QtyValue=Qty.value
     let PriceValue=Price.value
     let SubTotalPrice=getSubTotalPrice(QtyValue,PriceValue)
+    let TaxAmount=getTax(SubTotalPrice,"TX")
+    let TotalPrice=getTotalPrice(SubTotalPrice,TaxAmount)
     event.preventDefault()
     ansDiv.innerHTML=("<p>"+
     "Cantidad: "+QtyValue+
     "<br>Precio: "+PriceValue+
     "<br>Monto: "+SubTotalPrice+
-    "<br>Tax TX: "+getTax(SubTotalPrice,"TX")+
+    "<br>Tax TX: "+TaxAmount+
+    "<br>Monto Total "+TotalPrice+
     "</p>")
 });
