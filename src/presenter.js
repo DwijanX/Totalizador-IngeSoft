@@ -9,6 +9,7 @@ const StateCodeCombo = document.querySelector("#StateCode");
 const form = document.querySelector("#TotalizatorForm");
 const ansDiv=document.querySelector("#AnswerDiv")
 const ClearButton=document.querySelector("#ClearButton")
+const ProductsName=document.querySelector("#ProductsName")
 document.onload=loadStates()
 
 ClearButton.addEventListener("click",()=>
@@ -33,7 +34,8 @@ form.addEventListener("submit",(event)=>
     let TotalPrice=getTotalPrice(SubTotalPrice,TaxAmount,Discount)
 
     ansDiv.innerHTML=("<p>"+
-    "Cantidad: "+QtyValue+
+    "Nombre: "+ProductsName.value+
+    "<br>Cantidad: "+QtyValue+
     "<br>Precio: "+PriceValue+
     "<br>Monto: "+SubTotalPrice+
     "<br>Tax "+StateCode.value+": "+TaxAmount+
