@@ -9,4 +9,8 @@ function getTax(Price,State)
     }
     return ans
 }
-export default getTax
+function getTaxesObj()
+{
+    return USATaxes
+}
+export { getTax,getTaxesObj}
