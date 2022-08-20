@@ -9,6 +9,8 @@ const ansDiv=document.querySelector("#AnswerDiv")
 const ClearButton=document.querySelector("#ClearButton")
 const ClearTransactionsButton=document.querySelector("#ClearTransactionsButton")
 const TransactionList=document.querySelector("#TransactionList")
+const ProductsID=document.querySelector("#ProductsID")
+const ProductsName=document.querySelector("#ProductsName")
 
 document.onload=loadStates()
 
@@ -16,6 +18,8 @@ ClearButton.addEventListener("click",()=>
 {
     ansDiv.innerHTML=""
     Qty.value=""
+    ProductsID.value=""
+    ProductsName.value=""
     Price.value=""
 })
 ClearTransactionsButton.addEventListener("click",()=>
