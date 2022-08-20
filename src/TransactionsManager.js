@@ -8,15 +8,20 @@ const ansDiv=document.querySelector("#AnswerDiv")
 const StateCodeCombo = document.querySelector("#StateCode");
 const ProductsName=document.querySelector("#ProductsName")
 const TransactionList=document.querySelector("#TransactionList")
+const ProductsID=document.querySelector("#ProductsID")
 
-function addTransactiontoList(Name,Qty,Price,SubTotal,Tax,Discount,Total)
+
+
+function addTransactiontoList(Transaction)
 {
-    TransactionList.innerHTML+="<dt>"+Name+"</dt>"+"<dd>-cantidad:"+Qty+
-    " SubTotal: "+Price+
-    " Tax: "+SubTotal+
-    " Descuento: "+Discount+
-    " Total: "+Total+
-    "</dd>"
+    title="Nombre: "+Transaction["Nombre"]
+    description="-"
+    Object.keys(Transaction).forEach((key)=>
+    {
+        if (key!="Nombre")
+            description+=key+": "+Transaction[key]+" "
+    })
+    TransactionList.innerHTML+="<dt>"+title+"</dt> <dd>"+description+"</dd>"
 }
 function processNewTransaction()
 {
@@ -30,6 +35,7 @@ function processNewTransaction()
 
     ansDiv.innerHTML=("<p>"+
     "Nombre: "+ProductsName.value+
+    "<br>ID: "+ProductsID.value+
     "<br>Cantidad: "+QtyValue+
     "<br>Precio: "+PriceValue+
     "<br>Monto: "+SubTotal+
@@ -37,7 +43,9 @@ function processNewTransaction()
     "<br>Descuento: "+Discount+
     "<br>Monto Total "+TotalPrice+
     "</p>")
-    addTransactiontoList(ProductsName.value,QtyValue,PriceValue,SubTotal,TaxAmount,Discount,TotalPrice)
+    Transaction={Nombre:ProductsName.value,ID:ProductsID.value,Cantidad:QtyValue,
+        Precio:PriceValue,Monto:SubTotal,Tax:TaxAmount,Descuento:Discount,MontoTotal:TotalPrice}
+    addTransactiontoList(Transaction)
 }
 
 export default processNewTransaction

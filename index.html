@@ -1,6 +1,8 @@
 <html>
   <body >
      <form id="TotalizatorForm">
+        <label>ID:</label>
+        <input type="text" id="ProductsID">
         <label>Nombre:</label>
         <input type="text" id="ProductsName">
         <label>Cantidad:</label>
@@ -12,7 +14,8 @@
         <label>Codigo de Estado:</label>
         <select id="StateCode">
         </select>
-        <input type="submit" value="Totalizar">
+        <br>
+        <input type="submit" value="Realizar Transaccion">
     </form>
     <div id="AlertDiv" style="color:red">
       
@@ -20,7 +23,6 @@
     <div id="AnswerDiv">
 
     </div>
-    
     <button id="ClearButton">Clear</button>
     <h3 >Historial de transacciones</h3>
     <dl id="TransactionList">
