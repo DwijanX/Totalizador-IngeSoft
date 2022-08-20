@@ -1,6 +1,6 @@
 import {loadStates} from "./TaxesValuesLoader";
 import processNewTransaction from "./TransactionsManager";
-import validateIfValuesIsNumber from "./ValuesValidator";
+import validateIfValuesIsNumber from "./valuesValidator";
 
 const Qty = document.querySelector("#QtyProduct");
 const Price = document.querySelector("#ProductsPrice");
