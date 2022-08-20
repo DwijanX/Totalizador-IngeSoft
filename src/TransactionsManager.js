@@ -18,7 +18,7 @@ function addTransactiontoList(Name,Qty,Price,SubTotal,Tax,Discount,Total)
     " Total: "+Total+
     "</dd>"
 }
-function processNewTransactionTransaction()
+function processNewTransaction()
 {
     let SelectedTaxState=StateCodeCombo.options[StateCodeCombo.selectedIndex].text;
     let QtyValue=Qty.value
@@ -40,4 +40,4 @@ function processNewTransactionTransaction()
     addTransactiontoList(ProductsName.value,QtyValue,PriceValue,SubTotal,TaxAmount,Discount,TotalPrice)
 }
 
-export default processNewTransactionTransaction
+export default processNewTransaction
