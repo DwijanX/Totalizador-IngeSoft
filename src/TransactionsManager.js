@@ -14,8 +14,8 @@ const ProductsID=document.querySelector("#ProductsID")
 
 function addTransactiontoList(Transaction)
 {
-    title="Nombre: "+Transaction["Nombre"]
-    description="-"
+    let title="Nombre: "+Transaction["Nombre"]
+    let description="-"
     Object.keys(Transaction).forEach((key)=>
     {
         if (key!="Nombre")
@@ -43,7 +43,7 @@ function processNewTransaction()
     "<br>Descuento: "+Discount+
     "<br>Monto Total "+TotalPrice+
     "</p>")
-    Transaction={Nombre:ProductsName.value,ID:ProductsID.value,Cantidad:QtyValue,
+    let Transaction={Nombre:ProductsName.value,ID:ProductsID.value,Cantidad:QtyValue,
         Precio:PriceValue,Monto:SubTotal,Tax:TaxAmount,Descuento:Discount,MontoTotal:TotalPrice}
     addTransactiontoList(Transaction)
 }
