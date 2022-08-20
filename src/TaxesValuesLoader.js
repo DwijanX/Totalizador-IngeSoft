@@ -2,7 +2,7 @@ import { getTaxesObj } from "./taxManager";
 
 let StateCode = document.querySelector("#StateCode");
 function loadStates() {
-    stateCodeComboHTML=""
+    let stateCodeComboHTML=""
     TaxesObjKeys=Object.keys(getTaxesObj())
     for(let i=0;i<TaxesObjKeys.length;i++)
     {
